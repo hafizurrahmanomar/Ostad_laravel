@@ -20,4 +20,11 @@ class demoController extends Controller
         return view('demo');
 
     }
+
+    function demo2(){
+    return view('demo2');
+            }
+
+
+
 }

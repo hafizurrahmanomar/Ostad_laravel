@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+//Laravel Response
 Route::get('/demo1', [demoController::class, 'demo1']);
+//Laravel request
+Route::get('/demo2', [demoController::class, 'demo2']);
 Route::get('/about',[aboutController::class,'about']);
 Route::get('/about/me',[aboutController::class,'aboutMe']);
 Route::get('/download',action: [fileController::class,'download']);
