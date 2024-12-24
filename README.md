@@ -67,5 +67,5 @@ php artisan make:view site.index
 ```
 
 # How to Install Laravel Breeze in Laravel 11
--
+--
 
