@@ -72,10 +72,15 @@ php artisan make:view site.index
 
 ```
 composer create-project laravel/laravel middlewardemo
-composer require laravel/breeze --dev
+
 cd middlewardemo
+
+composer require laravel/breeze --dev
+
 php artisan breeze:install
+
 php artisan migrate
+
 php artisan serve
 
 ``
