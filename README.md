@@ -67,5 +67,16 @@ php artisan make:view site.index
 ```
 
 # How to Install Laravel Breeze in Laravel 11
---
+
+## Installation
+
+```
+composer create-project laravel/laravel middlewardemo
+composer require laravel/breeze --dev
+cd middlewardemo
+php artisan breeze:install
+php artisan migrate
+php artisan serve
+
+``
 
