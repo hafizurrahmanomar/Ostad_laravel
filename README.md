@@ -76,22 +76,22 @@ composer create-project laravel/laravel middlewardemo
 cd middlewardemo
 
 composer require laravel/breeze --dev
-- for Blade
+-for Blade
 php artisan breeze:install blade 
-- for vue run
+-for vue run
 php artisan breeze:install vue
 
-- For React run
+-For React run
 php artisan breeze:install react
 
-- For custom API run
+-For custom API run
 
 php artisan breeze:install api
 
 php artisan migrate
- - optional
+ -optional
 npm install
- - optional
+ -optional
 npm run dev
 
 php artisan serve
