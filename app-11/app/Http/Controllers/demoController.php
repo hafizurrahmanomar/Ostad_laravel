@@ -32,7 +32,7 @@ class demoController extends Controller
 
 
     }
-    //Laravel query   
+    //Laravel query
     function demo7(Request $request)
     {
 
@@ -75,11 +75,11 @@ class demoController extends Controller
         return $key1 . " " . $key2;
     }
 
-    
+
     function demo12(Request $request)
     {
         $myFile = $request->input('myFile');
-        $myFile->move(public_path('uploads'),$myFile->getClientOriginalName());
+        $myFile->move(public_path('uploads'), $myFile->getClientOriginalName());
 
         return "File uploaded successfully";
     }
