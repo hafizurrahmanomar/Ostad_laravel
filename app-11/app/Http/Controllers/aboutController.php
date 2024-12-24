@@ -14,5 +14,5 @@ class aboutController extends Controller
 function aboutMe(){
     return response('Hi, I am Hafizur Rahman Omar');
 }
-    
+
 }

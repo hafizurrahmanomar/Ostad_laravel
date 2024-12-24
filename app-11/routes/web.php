@@ -1,13 +1,17 @@
 <?php
+
+
 use App\Http\Controllers\demoController;
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\fileController;
 
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::get('/demo1', [demoController::class, 'demo1']);
 Route::get('/about',[aboutController::class,'about']);
