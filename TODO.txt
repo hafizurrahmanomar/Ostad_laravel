@@ -1,0 +1,10 @@
+=> composer create-project "laravel/laravel:^10.0" example-app // previous version
+=> composer create-project laravel/laravel example-app //curent version
+
+=> laravel=>app-12
+
+composer global require laravel/installer
+laravel new app-12
+cd app-12
+npm install && npm run build
+composer run dev
