@@ -8,3 +8,61 @@ laravel new app-12
 cd app-12
 npm install && npm run build
 composer run dev
+
+=>Response Practice
+
+1- সাধারণ স্ট্রিং রিটার্ন
+return 'Hello, World!';
+
+2- অ্যারে অটোমেটিক JSON এ কনভার্ট হবে
+return ['name' => 'John', 'age' => 30];
+
+3-রেস্পন্স অবজেক্ট ব্যবহার
+
+return response('Welcome to Home Page', 200)
+           ->header('Content-Type', 'text/plain')
+           ->header('X-Custom-Header', 'Laravel');
+
+4-JSON রেস্পন্স
+
+return response()->json([
+        'name' => 'Rahim',
+        'email' => 'rahim@example.com'
+    ]);
+
+5-JSON রেস্পন্স with status code
+
+return response()->json([
+        'message' => 'Not Found'
+    ], 404);
+
+6-ভিউ রেস্পন্স
+return view('welcome', ['name' => 'Karim']);
+
+Route::get('/dashboard', function () {
+    return redirect('/home');
+});
+
+// রুট নাম ব্যবহার করে
+Route::get('/profile', function () {
+    return redirect()->route('profile');
+});
+
+// with flash data
+Route::post('/user/update', function () {
+    // update logic
+    
+    return redirect('/user/profile')->with('status', 'Profile updated!');
+});
+
+7- Binary file response
+ return response()->file("img.jpg");
+ return response()->download("img.jpg");
+
+
+8- Response view
+ return view('response');//response.blade.php
+
+
+
+
