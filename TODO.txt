@@ -1,68 +1,64 @@
-=> composer create-project "laravel/laravel:^10.0" example-app // previous version
-=> composer create-project laravel/laravel example-app //curent version
+  
+  ///app/app.php
+  
+  /// 1- for practice purpose CSRF token is disabled
+  
+  ->withMiddleware(function (Middleware $middleware) {
 
-=> laravel=>app-12
+       
+        $middleware->validateCsrfTokens(except: [
+            '*',
+        ]);
 
-composer global require laravel/installer
-laravel new app-12
-cd app-12
-npm install && npm run build
-composer run dev
+2- RequestController create and url mapping and blade template show
 
-=>Response Practice
+-http://127.0.0.1:8000/request
 
-1- সাধারণ স্ট্রিং রিটার্ন
-return 'Hello, World!';
+return view(view: 'request_practice');
 
-2- অ্যারে অটোমেটিক JSON এ কনভার্ট হবে
-return ['name' => 'John', 'age' => 30];
+3-query string
+http://127.0.0.1:8000/request?name=Hafiz&email=info@gmail.com
 
-3-রেস্পন্স অবজেক্ট ব্যবহার
+-data catch or receive
 
-return response('Welcome to Home Page', 200)
-           ->header('Content-Type', 'text/plain')
-           ->header('X-Custom-Header', 'Laravel');
+$myQuery= $request->query();
+       return $myQuery;
 
-4-JSON রেস্পন্স
+4- Parameter send and receive
 
-return response()->json([
-        'name' => 'Rahim',
-        'email' => 'rahim@example.com'
-    ]);
+-http://127.0.0.1:8000/prams/Hafizur/Pabna
 
-5-JSON রেস্পন্স with status code
+-Route::get('/prams/{name}/{city}', [RequestController::class, 'prams']);
+-prams receive
 
-return response()->json([
-        'message' => 'Not Found'
-    ], 404);
+ $name= $request->name;
 
-6-ভিউ রেস্পন্স
-return view('welcome', ['name' => 'Karim']);
+    $city= $request->city;
 
-Route::get('/dashboard', function () {
-    return redirect('/home');
-});
-
-// রুট নাম ব্যবহার করে
-Route::get('/profile', function () {
-    return redirect()->route('profile');
-});
-
-// with flash data
-Route::post('/user/update', function () {
-    // update logic
-    
-    return redirect('/user/profile')->with('status', 'Profile updated!');
-});
-
-7- Binary file response
- return response()->file("img.jpg");
- return response()->download("img.jpg");
+        return "My name is {$name} and My city {$city}";
 
 
-8- Response view
- return view('response');//response.blade.php
+5- Json Body//input and post method
 
+http://127.0.0.1:8000/myJson
 
+Route::post('myJson', [RequestController::class, 'myJson']);
 
+function myJson(Request $request)
+{
+    $data= $request->input();
+    return $data;
+}
 
+//data post by body
+{
+    "name":"Hafizur Rahman",
+    "email":"admin@hafiz.com",
+    "pass":"1234"
+}
+
+6- Laravel header Practice
+
+7-form_data practice for file upload
+
+8- Laravel Ip Address
