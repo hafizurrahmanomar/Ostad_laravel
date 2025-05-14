@@ -1,0 +1,43 @@
+Ostad_Laravel/tohura(project create)
+
+=> composer create-project laravel/laravel tohura
+=> cd tohura
+=> php artisan serve
+=> Template download(Maillard)
+=> css,image,js(folder) from templae to public folder
+=> php artisan make:controller SiteController
+=> php artisan make:view site.index(same other blade file crate)
+
+wep.php
+========
+Route::get('/',[SiteController::class,'home'])->name('home');
+Route::get('/about',[SiteController::class,'about'])->name('about');
+Route::get('/menu',[SiteController::class,'menu'])->name('menu');
+Route::get('/reservations',[SiteController::class,'reservations'])->name('reservations');
+Route::get('/style',[SiteController::class,'style'])->name('style');
+Route::get('/generic',[SiteController::class,'generic'])->name('generic');
+
+SiteController.php
+==================
+public function home(Request $request){
+        return view("site.index");
+    }
+    public function menu(Request $request){
+        return view("site.menu");
+    }
+
+    public function about(Request $request){
+        return view("site.about");
+    }
+
+    public function reservations(Request $request){
+        return view("site.reservations");
+    }
+
+    public function style(Request $request){
+        return view("site.style");
+    }
+
+    public function generic(Request $request){
+        return view("site.style");
+    }
