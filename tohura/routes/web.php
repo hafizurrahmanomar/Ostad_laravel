@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[SiteController::class,'home'])->name('home');
-Route::get('/about',[SiteController::class,'about'])->name('about');
-Route::get('/menu',[SiteController::class,'menu'])->name('menu');
-Route::get('/reservations',[SiteController::class,'reservations'])->name('reservations');
-Route::get('/style',[SiteController::class,'style'])->name('style');
-Route::get('/generic',[SiteController::class,'generic'])->name('generic');
+Route::get('/about', [SiteController::class, 'about'])->name('about');
+Route::get('/menu', [SiteController::class, 'menu'])->name('menu');
+Route::get('/reservations', [SiteController::class, 'reservations'])->name('reservations');

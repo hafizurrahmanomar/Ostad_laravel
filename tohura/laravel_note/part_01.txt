@@ -41,3 +41,6 @@ public function home(Request $request){
     public function generic(Request $request){
         return view("site.style");
     }
+
+==============branch==2-blade==============================
+
